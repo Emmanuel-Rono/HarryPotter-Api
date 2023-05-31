@@ -1,17 +1,12 @@
 package com.emmanuel_rono.harry_potter_api
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.InternalCoroutinesApi
-import kotlinx.coroutines.NonDisposableHandle
-import kotlinx.coroutines.NonDisposableHandle.parent
 
-class characterAdapter(var characters:List<CharactersItem>) :RecyclerView.Adapter<characterAdapter.characterViewHolder>()
+class characterAdapter(var characters: List<CharactersItem>, param: (Any) -> Unit) :RecyclerView.Adapter<characterAdapter.characterViewHolder>()
 {
     inner class characterViewHolder(itemView: View):RecyclerView.ViewHolder(itemView)
     {
