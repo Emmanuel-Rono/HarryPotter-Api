@@ -29,9 +29,6 @@ class MainActivity : AppCompatActivity() {
         viewModel=ViewModelProvider(this,ViewModelfactory(repository)).get(dataviewModel::class.java)
 
     }
-
-
-
     fun gotoDetailsScreen(post:CharactersItem)
     {
         val intent=Intent(this,displaActivity::class.java)
