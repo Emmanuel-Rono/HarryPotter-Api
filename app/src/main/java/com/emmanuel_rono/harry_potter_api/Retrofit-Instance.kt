@@ -5,14 +5,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
     private val base_Url="https://hp-api.onrender.com/api"
- //creating Retrofit
+ //building
+
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(base_Url)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-    //
+    //retrofit instance created
     val chaApiService:ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
