@@ -12,6 +12,7 @@ object ApiClient {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+    //
     val chaApiService:ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
