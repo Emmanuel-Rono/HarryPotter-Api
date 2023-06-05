@@ -18,6 +18,6 @@ class dataviewModel(private val repository:dataRepository):ViewModel() {
             val the_Characters =repository.getcharacters()
             charcters.value=the_Characters
         }
-
     }
+
 }
