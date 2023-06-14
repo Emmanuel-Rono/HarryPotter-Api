@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         //Defining the Key to use for passing data -PutExtra
         const val POSTS_KEY = "the_Posts"
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,7 +27,7 @@ class MainActivity : AppCompatActivity() {
        // val adapter = characterAdapter(emptyList()) { characters ->
          //   gotoDetailsScreen(characters)
             val adapter = characterAdapter(emptyList()) { character ->
-                gotoDetailsScreen(character)
+             //   gotoDetailsScreen(character as CharactersItem)
         }
         displayRecyclerview.adapter=adapter
         val repository=dataRepository()
@@ -38,10 +37,13 @@ class MainActivity : AppCompatActivity() {
         //1.adapter,layoutManager,
 
     }
-    private fun gotoDetailsScreen(character: CharactersItem) {
-        val intent = Intent(this, displaActivity::class.java)
-        intent.putExtra(POSTS_KEY, character)
-        startActivity(intent)
+   /* private fun gotoDetailsScreen(character: CharactersItem) {
+       // val intent = Intent(this, displaActivity::class.java)
+       // intent.putExtra(POSTS_KEY, character)
+       startActivity(intent)
+
+    */
     }
 
-}
+
+
