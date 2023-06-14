@@ -17,33 +17,28 @@ class MainActivity : AppCompatActivity() {
         //Defining the Key to use for passing data -PutExtra
         const val POSTS_KEY = "the_Posts"
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val displayRecyclerview = findViewById<RecyclerView>(R.id.dataRecyclerview)
-        displayRecyclerview.layoutManager =LinearLayoutManager(this)
+        displayRecyclerview.layoutManager = LinearLayoutManager(this)
         //Grid layout Manager
         //displayRecyclerview.layoutManager=GridLayoutManager(this,2)
-       // val adapter = characterAdapter(emptyList()) { characters ->
-         //   gotoDetailsScreen(characters)
-            val adapter = characterAdapter(emptyList()) { character ->
-             //   gotoDetailsScreen(character as CharactersItem)
+        // val adapter = characterAdapter(emptyList()) { characters ->
+        //   gotoDetailsScreen(characters)
+        val adapter = characterAdapter(emptyList()) { character ->
+            gotoDetailsScreen(character as CharactersItem)
         }
-        displayRecyclerview.adapter=adapter
-        val repository=dataRepository()
-        viewModel=ViewModelProvider(this,ViewModelfactory(repository)).get(dataviewModel::class.java)
-
-        //Things that must me placed when working with recyclerviews
+        displayRecyclerview.adapter = adapter
+        val repository = dataRepository()
+        viewModel = ViewModelProvider(this, ViewModelfactory(repository))[dataviewModel::class.java]
+        //hings that must me placed when working with recyclerviews
         //1.adapter,layoutManager,
-
     }
-   /* private fun gotoDetailsScreen(character: CharactersItem) {
-       // val intent = Intent(this, displaActivity::class.java)
-       // intent.putExtra(POSTS_KEY, character)
-       startActivity(intent)
-
-    */
+    fun gotoDetailsScreen(character: CharactersItem) {
+        val intent = Intent(this, displaActivity::class.java)
+        intent.putExtra(POSTS_KEY, character)
+        startActivity(intent)
     }
-
-
-
+}
