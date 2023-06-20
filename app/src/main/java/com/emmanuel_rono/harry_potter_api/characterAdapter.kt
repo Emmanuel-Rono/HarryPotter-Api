@@ -20,6 +20,7 @@ class characterAdapter(var characters: List<CharactersItem>, param: (Any) -> Uni
     override fun onBindViewHolder(holder: characterViewHolder, position: Int) {
 val character=characters[position]
         holder.Title_Text.text=character.name
+        //older.Title_Text.text=character.name
     }
 
     override fun getItemCount(): Int {
